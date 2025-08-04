@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import AdminLoginModal from '@/components/AdminLoginModal';
 
 interface HeaderProps {
   activeTab: string;
@@ -20,6 +21,20 @@ const Header: React.FC<HeaderProps> = ({
   isAdmin,
   setIsAdmin
 }) => {
+  const [showAdminModal, setShowAdminModal] = useState(false);
+
+  const handleAdminClick = () => {
+    if (isAdmin) {
+      setIsAdmin(false);
+    } else {
+      setShowAdminModal(true);
+    }
+  };
+
+  const handleAdminLoginSuccess = () => {
+    setIsAdmin(true);
+  };
+
   return (
     <header className="bg-black/20 backdrop-blur-md border-b border-orange/20 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
@@ -98,7 +113,7 @@ const Header: React.FC<HeaderProps> = ({
                 <Button 
                   variant="outline" 
                   size="sm"
-                  onClick={() => setIsAdmin(!isAdmin)}
+                  onClick={handleAdminClick}
                   className={`text-white ${
                     isAdmin 
                       ? 'bg-red-600 hover:bg-red-700 border-red-500' 
@@ -113,6 +128,13 @@ const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
     </header>
+      
+      <AdminLoginModal 
+        isOpen={showAdminModal}
+        onClose={() => setShowAdminModal(false)}
+        onSuccess={handleAdminLoginSuccess}
+      />
+    </div>
   );
 };
 
