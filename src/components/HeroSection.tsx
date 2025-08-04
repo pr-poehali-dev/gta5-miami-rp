@@ -35,8 +35,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setActiveTab }) => {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="text-white border-white hover:bg-white/20 px-8 py-3"
+                className="bg-orange hover:bg-orange-600 text-white px-8 py-3"
                 onClick={() => setActiveTab('donate')}
               >
                 <Icon name="Star" size={20} className="mr-2" />
