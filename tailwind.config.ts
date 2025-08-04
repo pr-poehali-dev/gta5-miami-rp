@@ -17,7 +17,7 @@ export default {
 				'2xl': '1400px'
 			}
 		},
-		fonts: {
+		fontFamily: {
 			'orbitron': ['Orbitron', 'monospace'],
 			'sans': ['Inter', 'system-ui', 'sans-serif']
 		},

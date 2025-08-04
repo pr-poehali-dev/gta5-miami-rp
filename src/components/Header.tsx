@@ -134,7 +134,6 @@ const Header: React.FC<HeaderProps> = ({
         onClose={() => setShowAdminModal(false)}
         onSuccess={handleAdminLoginSuccess}
       />
-    </div>
   );
 };
 
