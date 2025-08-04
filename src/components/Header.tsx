@@ -102,7 +102,7 @@ const Header: React.FC<HeaderProps> = ({
                   className={`text-white ${
                     isAdmin 
                       ? 'bg-red-600 hover:bg-red-700 border-red-500' 
-                      : 'border-orange hover:bg-orange/20'
+                      : 'bg-orange hover:bg-orange-600 border-orange hover:shadow-lg hover:shadow-orange/50 transition-all duration-300'
                   }`}
                 >
                   {isAdmin ? 'Выйти из админки' : 'Админ'}
